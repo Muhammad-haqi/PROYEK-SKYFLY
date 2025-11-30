@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 
 // ========================= DATA DESTINASI ========================= //
@@ -309,7 +310,7 @@ export default function HomePage() {
 
 
       {/* ===================== HERO ===================== */}
-      <section className="relative h-[450px] md:h-[500px] flex items-center text-white w-full">
+<section className="relative h-[450px] md:h-[500px] flex items-center text-white w-full">
 
   <img
     src="/aboutt.jpg"
@@ -332,14 +333,19 @@ export default function HomePage() {
           Akses dunia dalam genggaman. Temukan pengalaman terbang terbaik dengan SkyFly Pro.
         </p>
 
-        <a href="/pesan" className="btn-primary-lg inline-block">
-          Pesan Sekarang
-        </a>
+        <Link
+  to="/pesan"
+  className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 font-semibold mt-3"
+>
+  Pesan Sekarang
+</Link>
+
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 
@@ -395,12 +401,13 @@ export default function HomePage() {
                 {d.refund && "Bisa 100% refund"} {d.reschedule && "• Bisa reschedule"}
               </div>
 
-              <a
-                href="/pesan"
-                className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 font-semibold mt-3"
+             <Link
+              to="/pesan"
+              className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 font-semibold mt-3"
               >
-                Pesan Sekarang
-              </a>
+              Pesan Sekarang
+              </Link>
+
             </div>
           ))}
         </div>
