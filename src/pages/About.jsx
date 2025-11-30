@@ -1,10 +1,14 @@
 import { ShieldCheck, Timer, Ticket, Plane, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+
 
 export default function About() {
   return (
     <div className="w-full">
 
+      {/* HERO SECTION */}
       <section className="relative h-[350px] flex items-center justify-center text-white">
         <img
           src="/aboutt.jpg"
@@ -23,6 +27,7 @@ export default function About() {
         </motion.h1>
       </section>
 
+      {/* DESKRIPSI UTAMA */}
       <section className="px-6 lg:px-20 py-12 bg-gradient-to-br from-sky-50 to-blue-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -45,6 +50,7 @@ export default function About() {
         </motion.div>
       </section>
 
+      {/* KEUNGGULAN */}
       <section className="px-6 lg:px-20 pb-14">
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-700">
           Keunggulan SkyFly
@@ -60,6 +66,7 @@ export default function About() {
           }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
+          {/* CARD 1 */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 40 },
@@ -77,6 +84,7 @@ export default function About() {
             </p>
           </motion.div>
 
+          {/* CARD 2 */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 40 },
@@ -94,6 +102,7 @@ export default function About() {
             </p>
           </motion.div>
 
+          {/* CARD 3 */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 40 },
@@ -113,6 +122,7 @@ export default function About() {
         </motion.div>
       </section>
 
+      {/* TIMELINE */}
       <section className="bg-white py-14 px-6 lg:px-20">
         <h2 className="text-3xl font-bold text-blue-700 mb-10 text-center">
           Perjalanan SkyFly
@@ -147,6 +157,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* TEAM SECTION */}
       <section className="px-6 lg:px-20 py-16 bg-gradient-to-br from-blue-50 to-sky-100">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
           Tim Pengembang
@@ -165,22 +176,27 @@ export default function About() {
           {[
             {
               role: "Muhammad Haqi",
-              img: "/haqi.jpg",
+              
+              img: "/haqiii.jpg",
             },
             {
               role: "Syahid Lukman",
-              img: "/syahid.jpg",
+              
+              img: "/syahid.png",
             },
             {
               role: "Nabilah Putri",
+              
               img: "/nabila.jpg",
             },
             {
               role: "Imam Al-Bukhori",
+              
               img: "/imam.jpg",
             },
             {
               role: "Jefri Al-Bukhori",
+              
               img: "/jefri.jpg",
             },
           ].map((item, i) => (
@@ -193,6 +209,7 @@ export default function About() {
               transition={{ duration: 0.5, type: "spring" }}
               className="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/40 text-center"
             >
+              {/* FOTO */}
               <img
                 src={item.img}
                 alt={item.role}
@@ -206,6 +223,7 @@ export default function About() {
         </motion.div>
       </section>
 
+      {/* CTA */}
       <section className="py-16 text-center bg-white">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -225,15 +243,19 @@ export default function About() {
           Nikmati pemesanan tiket yang lebih cepat dan nyaman.
         </motion.p>
 
-        <motion.a
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
-          href="/pesan"
-          className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
-        >
-          Pesan Tiket Sekarang
-        </motion.a>
+        <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.3 }}
+>
+  <Link
+    to="/pesan"
+    className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
+  >
+    Pesan Tiket Sekarang
+  </Link>
+</motion.div>
+
       </section>
     </div>
   );
