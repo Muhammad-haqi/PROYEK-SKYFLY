@@ -173,27 +173,27 @@ export default function About() {
           {[
             {
               role: "Muhammad Haqi",
-              desc: "Merancang fitur dan tampilan aplikasi.",
+              
               img: "/haqiii.jpg",
             },
             {
               role: "Syahid Lukman",
-              desc: "Mendesain pengalaman dan tampilan pengguna.",
+              
               img: "/syahid.png",
             },
             {
               role: "Nabilah Putri",
-              desc: "Mengatur alur kerja proyek.",
+              
               img: "/nabila.jpg",
             },
             {
               role: "Imam Al-Bukhori",
-              desc: "Mengembangkan server dan database SkyFly.",
+              
               img: "/imam.jpg",
             },
             {
               role: "Jefri Al-Bukhori",
-              desc: "Mengawasi kualitas fitur dan menguji sistem.",
+              
               img: "/jefri.jpg",
             },
           ].map((item, i) => (
