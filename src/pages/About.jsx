@@ -1,5 +1,8 @@
 import { ShieldCheck, Timer, Ticket, Plane, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+
 
 export default function About() {
   return (
@@ -173,27 +176,27 @@ export default function About() {
           {[
             {
               role: "Muhammad Haqi",
-              
+              desc: "Merancang fitur dan tampilan aplikasi.",
               img: "/haqiii.jpg",
             },
             {
               role: "Syahid Lukman",
-              
+              desc: "Mendesain pengalaman dan tampilan pengguna.",
               img: "/syahid.png",
             },
             {
               role: "Nabilah Putri",
-              
+              desc: "Mengatur alur kerja proyek.",
               img: "/nabila.jpg",
             },
             {
               role: "Imam Al-Bukhori",
-              
+              desc: "Mengembangkan server dan database SkyFly.",
               img: "/imam.jpg",
             },
             {
               role: "Jefri Al-Bukhori",
-              
+              desc: "Mengawasi kualitas fitur dan menguji sistem.",
               img: "/jefri.jpg",
             },
           ].map((item, i) => (
@@ -240,15 +243,19 @@ export default function About() {
           Nikmati pemesanan tiket yang lebih cepat dan nyaman.
         </motion.p>
 
-        <motion.a
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
-          href="/pesan"
-          className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
-        >
-          Pesan Tiket Sekarang
-        </motion.a>
+        <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.3 }}
+>
+  <Link
+    to="/pesan"
+    className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
+  >
+    Pesan Tiket Sekarang
+  </Link>
+</motion.div>
+
       </section>
     </div>
   );
