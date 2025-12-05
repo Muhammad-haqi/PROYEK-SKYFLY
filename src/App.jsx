@@ -9,6 +9,8 @@ import RiwayatPage from "./pages/RiwayatPage";
 import About from "./pages/About";
 import Bantuan from "./pages/Bantuan";
 import Refund from "./components/Refund";
+import RegisterPage from "./pages/RegisterPage";
+
 
 
 export default function App() {
@@ -22,11 +24,11 @@ export default function App() {
     else document.body.classList.remove("dark");
   }, [theme]);
 
-  function handleLogin(username) {
-    localStorage.setItem("loggedUser", username);
-    setUser(username);
-    navigate("/");
-  }
+  // function handleLogin(username) {
+  //   localStorage.setItem("loggedUser", username);
+  //   setUser(username);
+  //   navigate("/");
+  // }
 
   function handleLogout() {
     localStorage.removeItem("loggedUser");
@@ -47,10 +49,11 @@ export default function App() {
           <Route path="/refund" element={<Refund />} />
           <Route path="/bantuan" element={<Bantuan />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-          <Route path="/" element={user ? <HomePage /> : <Navigate to="/login" replace />} />
-          <Route path="/pesan" element={user ? <PesanPage /> : <Navigate to="/login" replace />} />
-          <Route path="/riwayat" element={user ? <RiwayatPage /> : <Navigate to="/login" replace />} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/dashboard" element={<HomePage/>} />
+          <Route path="/pesan" element={ <PesanPage />} />
+          <Route path="/riwayat" element={ <RiwayatPage /> } />
+          <Route path="/register" element={ <RegisterPage /> } />
           {/* fallback */}
           <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
         </Routes>
